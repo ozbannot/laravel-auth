@@ -1,0 +1,25 @@
+
+   UnexpectedValueException 
+
+  Invalid route action: [App\Http\Controllers\ContactFormController].
+
+  at vendor/laravel/framework/src/Illuminate/Routing/RouteAction.php:91
+    87|      */
+    88|     protected static function makeInvokable($action)
+    89|     {
+    90|         if (! method_exists($action, '__invoke')) {
+  > 91|             throw new UnexpectedValueException("Invalid route action: [{$action}].");
+    92|         }
+    93| 
+    94|         return $action.'@__invoke';
+    95|     }
+
+  • `App\Http\Controllers\ContactFormController` is not invokable: The controller class `App\Http\Controllers\ContactFormController` is not invokable. Did you forget to add the `__invoke` method or is the controller's method missing in your routes file? 
+
+      [2m+8 vendor frames [22m
+  9   routes/web.php:24
+      Illuminate\Support\Facades\Facade::__callStatic()
+
+      [2m+4 vendor frames [22m
+  14  app/Providers/RouteServiceProvider.php:63
+      Illuminate\Routing\RouteRegistrar::group()
