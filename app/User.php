@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+    * 使用テーブル名
+    * @var string
+    */
+    protected $table = 'operation_info';
 }
