@@ -1,4 +1,5 @@
 <?php
+//
 namespace App\Services;
  
 class MD5Hasher implements \Illuminate\Contracts\Hashing\Hasher {
