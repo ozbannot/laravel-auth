@@ -41,5 +41,5 @@ class User extends Authenticatable
     * 使用テーブル名
     * @var string
     */
-    protected $table = 'operation_info';
+    //zprotected $table = 'operation_info';
 }
