@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'password',
     ];
 
     /**
@@ -42,4 +42,23 @@ class User extends Authenticatable
     * @var string
     */
     protected $table = 'operation_info';
+
+    // 認証時のログインIDで使用するカラム名を指定
+public function getAuthIdentifierName()
+{
+  return 'name';
+}
+
+// 標準で実装されている継続ログイン機能でエラーが発生するのを防ぐために記述する
+public function setRememberToken($value) {
+  return $this;
+}
+
+// 既存テーブルからMD5ハッシュ化されたパスワード情報を返すメソッド
+public function getAuthPassword()
+{
+  $hash_pass = $this->password;
+  return $hash_pass;
+}
+
 }
